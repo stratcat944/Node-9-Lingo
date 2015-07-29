@@ -3,6 +3,8 @@
     "express": "^4",
     "jade": "^1",
     "body-parser": "^1",
-    "mongoose": "~4.1.0"
+    "mongoose": "~4.1.0",
+    "node-google-translate": "~0.1.0",
+    "google-translate": "~1.0.0"
   }
 }
