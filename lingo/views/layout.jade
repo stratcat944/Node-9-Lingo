@@ -10,10 +10,12 @@ html(lang='en')
 		nav.navbar.navbar-default
 			ul.nav.navbar-nav
 				li
-					a(href='#') Translate
+					a(href='/translator') Translate
 				li
-					a(href='#') Quiz
+					a(href='/quiz') Quiz
 				li
-					a(href='#') Progress
-
+					a(href='/progress') Progress
+		block form-content
 		
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js")
+		script(src="main.js")

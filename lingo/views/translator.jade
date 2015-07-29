@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	h1 Lingo Translator
+block form-content
+	form#translate
+		input.form-control(name="language" placeholder="Language of Word to Translate")
+		input.form-control(name="new-language" placeholder="Language to Translate Word Into")
+		input.form-control(name ="word" placeholder="Word to Translate")
+		input.btn.btn-primary(type="submit" id="submit-button")
