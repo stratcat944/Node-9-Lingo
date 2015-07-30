@@ -1,4 +1,4 @@
-var googleTranslate = require('google-translate')('AIzaSyA46lADGAW24KDV5YkT1U4WQaYw2wxE8-4');
+var googleTranslate = require('google-translate')('AIzaSyCjfjtLnq2WNcOuHkeLn8fgcLf0_iEehcQ');
 
 var indexController = {
 	index: function(req, res) {
@@ -9,11 +9,11 @@ var indexController = {
 	},
 	translation: function(req, res){
 		var getWords = {
-			language : req.body.language,
+			language 	: req.body.language,
 			newLanguage : req.body.newLanguage,
-			word : req.body.word
+			word 		: req.body.word
 		}
-		console.log(getWords)
+		// console.log(getWords)
 		// getWords.save()
 
 		var postTranslation = function(err, doc){
@@ -25,6 +25,22 @@ var indexController = {
 			}
 		}
 	},
+
+	getTranslation: function(req, res){
+		var getWords = {
+			language 	: req.body.language,
+			newLanguage : req.body.newLanguage,
+			word 		: req.body.word
+		}
+		// console.log(getWords);
+
+		googleTranslate.translate(getWords.word, getWords.language, getWords.newLanguage, function(err, translation){
+			console.log(err);
+			res.send({translatedText: translation})
+
+		})
+	},
+
 	quiz: function(req, res){
 		res.render('quiz')
 	},

@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var indexController = require('./controllers/index.js');
-var googleTranslate = require('google-translate')('AIzaSyA46lADGAW24KDV5YkT1U4WQaYw2wxE8-4');
+var googleTranslate = require('google-translate')('AIzaSyCjfjtLnq2WNcOuHkeLn8fgcLf0_iEehcQ');
 var translatorCreate = require('./models/translate.js');
 // var mongoose = require('mongoose')
 
@@ -14,7 +14,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/', indexController.index);
-
+app.post('/get-translation', indexController.getTranslation);
 app.get('/translator', indexController.translator);
 app.get('/quiz', indexController.quiz);
 app.get('/progress', indexController.progress);
